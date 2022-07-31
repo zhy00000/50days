@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="option">
+    <h6>时间格式:</h6>
+    <span>24</span>
+    <input type="checkbox" id="controlFormat" onclick="toggleFormat()">
+    <div class="checkButton"><label for="controlFormat"></label></div>
+    <span>12 小时制</span>
+
+    <h6>显示秒:</h6>
+    <span> 显示</span>
+    <input type="checkbox" id="controlSecond" onclick="toggleSecond()">
+    <div class="checkButton"><label for="controlSecond"></label></div>
+    <span>隐藏</span>
+
+    <!--label 的 for attribute 绑定了 id 后，点击label会选中对应id的checkbox,
+          应用这个效果更改checkbox默认的样式-->
+  </div>
+
+  <div class="container">
+    <!-- 时钟整体盒子 -->
+    <div class="clock-container">
+      <!-- 时钟 时分秒 分别都是2位数 每一位一个div -->
+      <!--data-number属性实现简单数据的存取用于css和js操作其中的值-->
+
+      <!-- 时 -->
+      <!-- 第一位 -->
+      <div class="count-box">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+      <!-- 第二位 -->
+      <div class="count-box">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+
+      <!-- 分隔符 -->
+      <div class="divide">:</div>
+
+      <!-- 分 -->
+      <!-- 第三位 -->
+      <div class="count-box">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+      <!-- 第四位 -->
+      <div class="count-box">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+      <!-- 分隔符 -->
+      <div class="divide second">:</div>
+      <!-- 秒 -->
+      <!-- 第五位 -->
+      <div class="count-box second">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+      <!-- 第六位 -->
+      <div class="count-box second">
+        <div class="time front" data-number="1"></div>
+        <div class="time back" data-number="2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="twelve">
+    <p id="ampm">AM</p>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+
+
+</html>

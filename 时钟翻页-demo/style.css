@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #191919;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #969696 0%, #595959 100%);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/*时钟设置选项*/
+#option {
+  position: absolute;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+  text-align: center;
+  height: 50px;
+  font-size: 20px;
+  color: #717171;
+}
+
+#option h6 {
+  display: inline;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#option span {
+  font-size: 12px;
+  margin-left: 10px
+}
+
+/**
+*更改checkbox样式
+*/
+/*隐藏默认的checkbox复选框*/
+#option input[type=checkbox] {
+  visibility: hidden;
+}
+
+/*滑动背景*/
+.checkButton {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  border-radius: 15px;
+  border: 2px solid #3b84dd;
+  background: #191919;
+}
+
+/*滑轨*/
+.checkButton:after {
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  z-index: 1;
+  /*隐藏在滑块下*/
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: white;
+}
+
+/*滑块*/
+#option label {
+  position: absolute;
+  left: 5px;
+  z-index: 2;
+  /*显示在滑块上*/
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  border-radius: 100%;
+  border: 1px solid #25f7ff;
+  background: #3b84dd;
+  box-shadow: 1px 1px 3px #25f7ff;
+  animation: bounceBack 1s forwards ease-in-out;
+}
+
+/*!!!!!必须使用+选择器选择相邻的兄弟元素之后才能操作后边的元素*/
+#option input[type=checkbox]:checked+.checkButton label {
+  animation: bounce 1s forwards ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    left: 5px
+  }
+
+  90% {
+    left: 40px
+  }
+
+  100% {
+    left: 35px
+  }
+}
+
+@keyframes bounceBack {
+  0% {
+    left: 35px
+  }
+
+  90% {
+    left: 0
+  }
+
+  100% {
+    left: 5px
+  }
+}
+
+
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap-reverse;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 140px;
+  /* border: 5px solid #5d5d5d; */
+  /* border-radius: 15px; */
+  /* background-color: #242424; */
+}
+
+.count-box {
+  position: relative;
+  box-sizing: border-box;
+  width: 14%;
+  height: 120px;
+  margin-left: 1.4%;
+  text-align: center;
+  font-size: 100px;
+  line-height: 120px;
+  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s;
+}
+
+.divide {
+  width: 2%;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 1%;
+  font-size: 49px;
+  color: #717171;
+  text-align: center;
+}
+
+.time::before {
+  content: attr(data-number);
+  background: #333;
+  color: #ccc;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 50%;
+  perspective: 500px;
+  border-bottom: 1px solid #717171;
+  text-shadow: 0 1px 2px #000;
+}
+
+.time::after {
+  content: attr(data-number);
+  line-height: 0;
+  background: #333;
+  color: #ccc;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  perspective: 500px;
+  text-shadow: 0 1px 2px #000;
+}
+
+.count-box .front::after,
+.count-box .back::before {
+  z-index: 1;
+}
+
+.count-box .back::after {
+  z-index: 2;
+  transform-origin: center top;
+  transform: rotateX(0.5turn);
+}
+
+.count-box .front::before {
+  z-index: 3;
+}
+
+.count-box.running .front::before {
+  transform-origin: center bottom;
+  animation: frontFlipDown 0.8s ease-in-out;
+  backface-visibility: hidden;
+
+}
+
+.count-box.running .back::after {
+  animation: backFlipDown 0.8s ease-in-out;
+  /* transform: perspective(12px); */
+
+}
+
+@keyframes frontFlipDown {
+  to {
+    transform: rotateX(0.5turn);
+  }
+}
+
+@keyframes backFlipDown {
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+
+#twelve {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 5px solid #5d5d5d;
+  border-radius: 15px;
+  font-size: 25px;
+  color: #717171;
+}

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  /* no-repeat 时候重复  第二个center是定位  center/cover 是background-size的属性 */
+  background: url("./bg.jpg")no-repeat center center/cover;;
+  filter: blur(30px);
+  /* filter: grayscale(100%); */
+}
+
+.loading-text{
+  font-size: 128px;
+  color: #fff;
+}

@@ -1,0 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+button{
+  color: #fff;
+  background-color: blueviolet;
+  border: 1px solid blueviolet;
+  font-size: 14px;
+  padding: 30px 50px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+
+button .ripple{
+  position: absolute;
+  border-radius: 50px;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  opacity: 0;
+  animation: ripple 0.5s ease-out;
+}
+
+/*transform是css 2D 转换效果 scale 就是缩放的倍数 大于1就是放大 小于1就是缩小  */
+
+
+@keyframes ripple{
+  from{
+    opacity: 1;
+    transform: scale(0);
+  }
+  to{
+    opacity: 0;
+    transform: scale(5);
+  }
+}
