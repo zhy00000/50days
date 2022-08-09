@@ -76,6 +76,9 @@ img {
 }
 
 .animated-bg {
+  /* background-image 属性设置一个元素的背景图像。 */
+  /* 	创建一个线性渐变的 "图像"(从上到下) */
+  /* to right 从左到右渐变 */
   background-image: linear-gradient(to right,
       #f6f7f8 0%,
       #edeef1 10%,
@@ -102,6 +105,7 @@ img {
   width: 100%;
 }
 
+/* background-position属性设置背景图像的起始位置。 */
 @keyframes bgPos {
   0% {
     background-position: 50% 0;
