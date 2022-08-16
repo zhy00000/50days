@@ -20,7 +20,6 @@ const changeSlide = (direction) => {
   const sliderHeight = sliderContainer.clientHeight
   if (direction === "up") {
     activeSlideIndex++
-    //向上反倒最后最大时,返回0
     if (activeSlideIndex > slidesLength - 1) {
       activeSlideIndex = 0
     }
