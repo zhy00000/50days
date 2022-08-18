@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -16,6 +16,10 @@ body {
   width: 90vw;
 }
 
+/* 设置子元素占父元素的比例，给子元素设置的。 */
+/* flex:1;  */
+/* 后面的数值表示，所加属性的这个子元素占父元素是剩余的几份，  */
+/* 已经有宽度的子元素提前分配不包在总份中。 */
 .panel {
   background-size: cover;
   background-position: center;
@@ -26,10 +30,10 @@ body {
   flex: 0.5;
   margin: 10px;
   position: relative;
-  transition:all 0.7s ease-in;
+  transition: all 0.7s ease-in;
 }
 
-.panel h3{
+.panel h3 {
   font-size: 24px;
   position: absolute;
   left: 20px;
@@ -38,20 +42,22 @@ body {
   opacity: 0;
 }
 
-.panel.active{
+.panel.active {
   flex: 5;
 }
-.panel.active h3{
+
+.panel.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-@media(max-width:480px){
+@media(max-width:480px) {
   .container {
     width: 100vh;
   }
+
   .panel:nth-of-type(4),
-  .panel:nth-of-type(5){
+  .panel:nth-of-type(5) {
     display: none;
   }
 }
