@@ -4,10 +4,10 @@
 }
 
 body {
-  background: #191919;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: radial-gradient(ellipse at center, #969696 0%, #595959 100%);
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
 }
 
 /*时钟设置选项*/
@@ -123,7 +123,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: wrap-reverse;
+  /* flex-flow: wrap-reverse; */
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
@@ -132,9 +132,9 @@ body {
 .clock-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 30%;
-  height: 140px;
+  /* justify-content: space-around; */
+  /* width: 80%;
+  height: 80%; */
   /* border: 5px solid #5d5d5d; */
   /* border-radius: 15px; */
   /* background-color: #242424; */
@@ -143,24 +143,24 @@ body {
 .count-box {
   position: relative;
   box-sizing: border-box;
-  width: 14%;
-  height: 120px;
-  margin-left: 1.4%;
+  width: 60px;
+  height: 90px;
+  margin: 5px;
   text-align: center;
-  font-size: 100px;
-  line-height: 120px;
+  font-size: 80px;
+  line-height: 88px;
   font-weight: bold;
+  border-radius: 6px;
   background-color: #fff;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-  transition: opacity 0.3s;
+  /* transition: opacity 0.3s; */
 }
 
 .divide {
   width: 2%;
-  height: 50px;
-  line-height: 50px;
-  margin-left: 1%;
-  font-size: 49px;
+  height: 90px;
+  line-height: 88px;
+  font-size: 40px;
   color: #717171;
   text-align: center;
 }
@@ -176,7 +176,10 @@ body {
   width: 100%;
   top: 0;
   bottom: 50%;
-  perspective: 500px;
+  perspective: 200px;
+  -webkit-perspective:200px;
+  perspective-origin:bottom bottom;
+  -webkit-perspective-origin:bottom bottom;
   border-bottom: 1px solid #717171;
   text-shadow: 0 1px 2px #000;
 }
@@ -193,7 +196,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  perspective: 500px;
+  perspective: 200px;
+  -webkit-perspective:200px;
+  perspective-origin:bottom bottom;
+  -webkit-perspective-origin:bottom bottom;
   text-shadow: 0 1px 2px #000;
 }
 
