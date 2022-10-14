@@ -9,7 +9,6 @@ function createBoxes() {
       const box = document.createElement('div')
       box.classList.add('box')
       box.style.backgroundPosition = `${-j * 125}px ${-i * 125}px`
-      // box.style.backgroundSize = "125px 125px"
       boxesContainer.appendChild(box)
     }
   }
