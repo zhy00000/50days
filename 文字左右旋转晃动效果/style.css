@@ -1,0 +1,36 @@
+span {
+  font-size: 48px;
+  font-weight: 600;
+  position: absolute;
+  animation: rotate 0.3s ease infinite;
+}
+
+span:nth-child(2) {
+  margin-left: 100px;
+}
+
+span:nth-child(3) {
+  margin-left: 200px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(0);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
