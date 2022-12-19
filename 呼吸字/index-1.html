@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>呼吸字</title>
+</head>
+
+<body>
+  <div class="text">文字颜色渐变流光效果</div>
+  <!-- 思路就是 文字颜色填充为透明、背景裁剪让文字使用背景色、然后设置一个渐变背景色
+    再放大一下背景，最后通过动画移动背景位置，于是效果就出来了 -->
+</body>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: hsl(0 0% 20%);
+  }
+
+  /* 加上 -webkit- 注意兼容 */
+  .text {
+    font-size: clamp(3rem, 25vmin, 8rem);
+    background: linear-gradient(135deg,
+        #0eaf6d,
+        #ff6ac6 25%,
+        #147b96 50%,
+        #e6d205 55%,
+        #2cc4e0 60%,
+        #8b2ce0 80%,
+        #ff6384 95%,
+        #08dfb4);
+    /* 文字颜色填充设置为透明 */
+    color: transparent;
+    /* 背景裁剪，即让文字使用背景色 */
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* 背景图放大一下，看着柔和一些 */
+    background-size: 200% 100%;
+    /* 应用动画flowCss 12秒速度 无限循环 线性匀速动画*/
+    animation: flowCss 12s infinite linear;
+  }
+
+  @keyframes flowCss {
+    0% {
+      /* 移动背景位置 */
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: -400% 0;
+    }
+  }
+
+  h1:hover {
+    animation: flowCss 4s infinite linear;
+  }
+</style>
+
+</html>
+<!-- 
+作者：水冗水孚
+链接：https://juejin.cn/post/7172535582206197797
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 -->
