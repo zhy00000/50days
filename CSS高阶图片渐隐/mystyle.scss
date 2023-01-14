@@ -1,0 +1,72 @@
+$count: 400;
+$sqrt: 20;
+$per: calc(100% / $sqrt);
+$width: 720px;
+$perWid: 36;
+
+@for $i from 1 to ($count + 1) {
+  @property --m-#{$i} {
+    syntax: "<number>";
+    initial-value: 1;
+    inherits: false;
+  }
+}
+
+@function bgSet($n) {
+  $bg : radial-gradient(rgba(0, 0, 0, var(--m-1)), rgba(0, 0, 0, var(--m-1)));
+
+  @for $i from 2 through $n {
+    $bg: $bg,
+    radial-gradient(rgba(0, 0, 0, var(--m-#{$i})), rgba(0, 0, 0, var(--m-#{$i})));
+  }
+
+  @return $bg;
+}
+
+@function positionSet($n) {
+  $bgPosition: ();
+
+  @for $i from 0 through ($n) {
+    @for $j from 0 through ($n - 1) {
+      $bgPosition: $bgPosition,
+      #{$i * $perWid}px #{$j * $perWid}px;
+    }
+  }
+
+  @return $bgPosition;
+}
+
+@function transitionSet($n) {
+  $transition: --m-1 0.1s 0.1s;
+
+  @for $i from 1 through $n {
+    $transition: $transition,
+    --m-#{$i} #{random(500)}ms #{random(500)}ms;
+  }
+
+  @return $transition;
+}
+
+div {
+  width: $width;
+  height: $width;
+  background: url(ji.png);
+  mask: bgSet($count);
+  -webkit-mask: bgSet($count);
+  mask-size: $per $per;
+  -webkit-mask-size: $per $per;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: positionSet($sqrt);
+  -webkit-mask-position: positionSet($sqrt);
+  transition: transitionSet($count);
+}
+
+div:hover {
+  @for $i from 1 through $count {
+    --m-#{$i}: 0;
+  }
+}
+
+// 作者：chokcoco 链接：https: //juejin.cn/post/7167160342101884935
+// 来源：稀土掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
