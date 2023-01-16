@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mask过度动画</title>
+</head>
+<style>
+  .container {
+    position: relative;
+    width: 980px;
+    height: 500px;
+  }
+
+  .masked-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    -webkit-mask-image: url(mask.png);
+    mask-image: url(mask.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: mask-animation 5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes mask-animation {
+    0% {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+
+    100% {
+      -webkit-mask-position: 500px 0;
+      mask-position: 500px 0;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <img src="无极剑圣.jpg" class="masked-image" />
+    <img src="星战-易.jpg" class="masked-image" />
+  </div>
+</body>
+
+</html>

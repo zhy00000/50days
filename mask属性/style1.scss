@@ -1,0 +1,38 @@
+ .img {
+   width: 980px;
+   height: 500px;
+   position: relative;
+   background: url(无极剑圣.jpg);
+ }
+
+ .img::before {
+   position: absolute;
+   content: "";
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: url(星战-易.jpg);
+   animation: maskMove 5s infinite ease-in-out;
+   //  mask: linear-gradient(45deg, #000 40%, transparent 60%);
+   //  -webkit-mask: linear-gradient(45deg, #000 40%, transparent 60%)
+ }
+
+ //  循环生成每一帧 scss 参数的写法和sass写法有差别
+ //  @keyframes maskMove {
+ //    @for $i from 0 through 100 {
+ //      #{$i*1%} {
+ //        mask: linear-gradient(45deg, #000 #{$i*1%}, transparent #{($i+5)*1%}, transparent 1%);
+ //        -webkit-mask: linear-gradient(45deg, #000 #{$i*1%}, transparent #{($i+5)*1%}, transparent 1%);
+ //      }
+ //    }
+ //  }
+ //  角向渐变
+ @keyframes maskMove {
+   @for $i from 0 through 100 {
+     #{$i*1%} {
+       mask: conic-gradient(#000 #{$i*1%}, transparent #{($i+5)*1%}, transparent 1%);
+       -webkit-mask: conic-gradient(#000 #{$i*1%}, transparent #{($i+5)*1%}, transparent 1%);
+     }
+   }
+ }

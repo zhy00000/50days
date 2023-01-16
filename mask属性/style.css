@@ -1,0 +1,71 @@
+/* 1.使用mask 进行图片裁剪 */
+/* .img {
+  width: 1240px;
+  height: 632px;
+  background-image: url("./德邦总管.jpg");
+  background-repeat: no-repeat;
+  mask:
+    linear-gradient(135deg, transparent 30px, #fff 0) top left,
+    linear-gradient(-135deg, transparent 30px, #fff 0) top right,
+    linear-gradient(-45deg, transparent 30px, #fff 0) bottom right,
+    linear-gradient(45deg, transparent 30px, #fff 0) bottom left;
+  -webkit-mask:
+    linear-gradient(135deg, transparent 30px, #fff 0) top left,
+    linear-gradient(-135deg, transparent 30px, #fff 0) top right,
+    linear-gradient(-45deg, transparent 30px, #fff 0) bottom right,
+    linear-gradient(45deg, transparent 30px, #fff 0) bottom left;
+  mask-size: 50% 50%;
+  -webkit-mask-size: 50% 50%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+} */
+
+/* mask两张图片过度 */
+/* .img {
+  width: 980px;
+  height: 500px;
+  position: relative;
+  background: url(无极剑圣.jpg);
+}
+
+.img::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(星战-易.jpg);
+  
+  mask: linear-gradient(45deg, #000 40%, transparent 60%);
+  -webkit-mask: linear-gradient(45deg, #000 40%, transparent 60%)
+} */
+/* mask: linear-gradient(45deg, #000 50%, transparent 50%);
+  -webkit-mask: linear-gradient(45deg, #000 50%, transparent 50%); */
+
+
+/* mask动画转场 */
+.img {
+  width: 980px;
+  height: 500px;
+  position: relative;
+  background: url(无极剑圣.jpg);
+  animation: maskMove 2s linear;
+}
+
+@keyframes maskMove {
+  0% {
+    mask: linear-gradient(45deg, #000 0%, transparent 5%, transparent 5%);
+    -webkit-mask: linear-gradient(45deg, #000 0%, transparent 5%, transparent 5%)
+  }
+
+  50% {
+    mask: linear-gradient(45deg, #000 50%, transparent 55%, transparent 55%);
+    -webkit-mask: linear-gradient(45deg, #000 50%, transparent 55%, transparent 55%)
+  }
+
+  100% {
+    mask: linear-gradient(45deg, #000 100%, transparent 105%, transparent 105%);
+    -webkit-mask: linear-gradient(45deg, #000 100%, transparent 105%, transparent 105%)
+  }
+}

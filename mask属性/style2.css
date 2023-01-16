@@ -1,0 +1,62 @@
+body {
+  position: relative;
+}
+
+.img1 {
+  width: 980px;
+  height: 500px;
+  position: absolute;
+  background: url(无极剑圣.jpg) no-repeat left top;
+  /* z-index: 2; */
+}
+
+.img2 {
+  width: 980px;
+  height: 500px;
+  position: absolute;
+  background: url(星战-易.jpg) no-repeat left top;
+  mask-image: url(mask-img.png);
+  -webkit-mask-image: url(mask-img.png);
+  mask-size: 1500% 600%;
+  -webkit-mask-size: 1500% 700%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  animation: maskMove 2s steps(29) infinite;
+
+}
+
+/* .img1:is(:hover, :focus) .img2 {
+  animation: maskMove 2s steps(29) infinite;
+} */
+
+@keyframes maskMove {
+  from {
+    mask-position: 0 0;
+    -webkit-mask-position: 0 0;
+  }
+
+  to {
+    mask-position: -100% 0;
+    -webkit-mask-position: -100% 0;
+  }
+}
+
+
+.image {
+  position: absolute;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: url(mask-img.png);
+  animation: run 2s steps(29) infinite;
+}
+
+@keyframes run {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}

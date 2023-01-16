@@ -41,7 +41,7 @@ $perWid: 36;
 
   @for $i from 1 through $n {
     $transition: $transition,
-    --m-#{$i} #{random(500)}ms #{random(500)}ms;
+    --m-#{$i} #{random(5000)}ms #{random(5000)}ms;
   }
 
   @return $transition;
