@@ -73,9 +73,15 @@
       var cvs = document.getElementById('cvs'),
         ctx = cvs.getContext('2d'),
         img = new Image();
+
+      // 解决canvas画图跨域的问题
+      img.setAttribute('crossorigin', 'anonymous');
+      // https://www.uoften.com/article/238321.html 解决方案
+      // index.html:84 Uncaught DOMException: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.
+      // 这个报错通过 https://blog.csdn.net/zz130428/article/details/128185880  https://blog.csdn.net/m0_58565372/article/details/127674536
       img = document.getElementById('img');
-      img.crossOrigin = "*";
-      img.onload = function () {
+      // img.crossOrigin = "*";
+      img.onload = () => {
         // 把图片放到canvas 画布上
         ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
         // 获取像素数据
