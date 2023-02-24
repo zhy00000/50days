@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(ellipse at center, #969696 0%, #595959 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  position: relative;
+  border-radius: 50%;
+}
+
+.loading .dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  perspective: 70px;
+  transform-style: preserve-3d;
+}
+
+.loading .dot::after, .loading .dot::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.loading .dot::after {
+  background-color: #fff;
+  top: 100%;
+  animation: moveWhite 2000ms infinite;
+}
+
+.loading .dot::before {
+  background-color: #000;
+  top: -100%;
+  animation: moveBlack 2000ms infinite;
+}
+
+.loading .dot:nth-child(1) {
+  transform: rotate(10deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(1)::after, .loading .dot:nth-child(1)::before {
+  animation-delay: -166.66667ms;
+}
+
+.loading .dot:nth-child(2) {
+  transform: rotate(20deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(2)::after, .loading .dot:nth-child(2)::before {
+  animation-delay: -333.33333ms;
+}
+
+.loading .dot:nth-child(3) {
+  transform: rotate(30deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(3)::after, .loading .dot:nth-child(3)::before {
+  animation-delay: -500ms;
+}
+
+.loading .dot:nth-child(4) {
+  transform: rotate(40deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(4)::after, .loading .dot:nth-child(4)::before {
+  animation-delay: -666.66667ms;
+}
+
+.loading .dot:nth-child(5) {
+  transform: rotate(50deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(5)::after, .loading .dot:nth-child(5)::before {
+  animation-delay: -833.33333ms;
+}
+
+.loading .dot:nth-child(6) {
+  transform: rotate(60deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(6)::after, .loading .dot:nth-child(6)::before {
+  animation-delay: -1000ms;
+}
+
+.loading .dot:nth-child(7) {
+  transform: rotate(70deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(7)::after, .loading .dot:nth-child(7)::before {
+  animation-delay: -1166.66667ms;
+}
+
+.loading .dot:nth-child(8) {
+  transform: rotate(80deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(8)::after, .loading .dot:nth-child(8)::before {
+  animation-delay: -1333.33333ms;
+}
+
+.loading .dot:nth-child(9) {
+  transform: rotate(90deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(9)::after, .loading .dot:nth-child(9)::before {
+  animation-delay: -1500ms;
+}
+
+.loading .dot:nth-child(10) {
+  transform: rotate(100deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(10)::after, .loading .dot:nth-child(10)::before {
+  animation-delay: -1666.66667ms;
+}
+
+.loading .dot:nth-child(11) {
+  transform: rotate(110deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(11)::after, .loading .dot:nth-child(11)::before {
+  animation-delay: -1833.33333ms;
+}
+
+.loading .dot:nth-child(12) {
+  transform: rotate(120deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(12)::after, .loading .dot:nth-child(12)::before {
+  animation-delay: -2000ms;
+}
+
+.loading .dot:nth-child(13) {
+  transform: rotate(130deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(13)::after, .loading .dot:nth-child(13)::before {
+  animation-delay: -2166.66667ms;
+}
+
+.loading .dot:nth-child(14) {
+  transform: rotate(140deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(14)::after, .loading .dot:nth-child(14)::before {
+  animation-delay: -2333.33333ms;
+}
+
+.loading .dot:nth-child(15) {
+  transform: rotate(150deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(15)::after, .loading .dot:nth-child(15)::before {
+  animation-delay: -2500ms;
+}
+
+.loading .dot:nth-child(16) {
+  transform: rotate(160deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(16)::after, .loading .dot:nth-child(16)::before {
+  animation-delay: -2666.66667ms;
+}
+
+.loading .dot:nth-child(17) {
+  transform: rotate(170deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(17)::after, .loading .dot:nth-child(17)::before {
+  animation-delay: -2833.33333ms;
+}
+
+.loading .dot:nth-child(18) {
+  transform: rotate(180deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(18)::after, .loading .dot:nth-child(18)::before {
+  animation-delay: -3000ms;
+}
+
+.loading .dot:nth-child(19) {
+  transform: rotate(190deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(19)::after, .loading .dot:nth-child(19)::before {
+  animation-delay: -3166.66667ms;
+}
+
+.loading .dot:nth-child(20) {
+  transform: rotate(200deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(20)::after, .loading .dot:nth-child(20)::before {
+  animation-delay: -3333.33333ms;
+}
+
+.loading .dot:nth-child(21) {
+  transform: rotate(210deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(21)::after, .loading .dot:nth-child(21)::before {
+  animation-delay: -3500ms;
+}
+
+.loading .dot:nth-child(22) {
+  transform: rotate(220deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(22)::after, .loading .dot:nth-child(22)::before {
+  animation-delay: -3666.66667ms;
+}
+
+.loading .dot:nth-child(23) {
+  transform: rotate(230deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(23)::after, .loading .dot:nth-child(23)::before {
+  animation-delay: -3833.33333ms;
+}
+
+.loading .dot:nth-child(24) {
+  transform: rotate(240deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(24)::after, .loading .dot:nth-child(24)::before {
+  animation-delay: -4000ms;
+}
+
+.loading .dot:nth-child(25) {
+  transform: rotate(250deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(25)::after, .loading .dot:nth-child(25)::before {
+  animation-delay: -4166.66667ms;
+}
+
+.loading .dot:nth-child(26) {
+  transform: rotate(260deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(26)::after, .loading .dot:nth-child(26)::before {
+  animation-delay: -4333.33333ms;
+}
+
+.loading .dot:nth-child(27) {
+  transform: rotate(270deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(27)::after, .loading .dot:nth-child(27)::before {
+  animation-delay: -4500ms;
+}
+
+.loading .dot:nth-child(28) {
+  transform: rotate(280deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(28)::after, .loading .dot:nth-child(28)::before {
+  animation-delay: -4666.66667ms;
+}
+
+.loading .dot:nth-child(29) {
+  transform: rotate(290deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(29)::after, .loading .dot:nth-child(29)::before {
+  animation-delay: -4833.33333ms;
+}
+
+.loading .dot:nth-child(30) {
+  transform: rotate(300deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(30)::after, .loading .dot:nth-child(30)::before {
+  animation-delay: -5000ms;
+}
+
+.loading .dot:nth-child(31) {
+  transform: rotate(310deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(31)::after, .loading .dot:nth-child(31)::before {
+  animation-delay: -5166.66667ms;
+}
+
+.loading .dot:nth-child(32) {
+  transform: rotate(320deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(32)::after, .loading .dot:nth-child(32)::before {
+  animation-delay: -5333.33333ms;
+}
+
+.loading .dot:nth-child(33) {
+  transform: rotate(330deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(33)::after, .loading .dot:nth-child(33)::before {
+  animation-delay: -5500ms;
+}
+
+.loading .dot:nth-child(34) {
+  transform: rotate(340deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(34)::after, .loading .dot:nth-child(34)::before {
+  animation-delay: -5666.66667ms;
+}
+
+.loading .dot:nth-child(35) {
+  transform: rotate(350deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(35)::after, .loading .dot:nth-child(35)::before {
+  animation-delay: -5833.33333ms;
+}
+
+.loading .dot:nth-child(36) {
+  transform: rotate(360deg) translateY(-200px);
+}
+
+.loading .dot:nth-child(36)::after, .loading .dot:nth-child(36)::before {
+  animation-delay: -6000ms;
+}
+
+@keyframes moveBlack {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, 100%, 20px);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate3d(0, 200%, 0);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translate3d(0 100%, -20px);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes moveWhite {
+  0% {
+    animation-timing-function: ease-in;
+  }
+  25% {
+    transform: translate3d(0, -100%, -20px);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate3d(0, -200%, 0);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform: translate3d(0 -100%, 20px);
+    animation-timing-function: ease-out;
+  }
+}
