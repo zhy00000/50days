@@ -126,7 +126,8 @@ body {
   /* flex-flow: wrap-reverse; */
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  background: radial-gradient(ellipse at center, #969696 0%, #595959 100%);
 }
 
 .clock-container {
@@ -177,11 +178,12 @@ body {
   top: 0;
   bottom: 50%;
   perspective: 200px;
-  -webkit-perspective:200px;
-  perspective-origin:bottom bottom;
-  -webkit-perspective-origin:bottom bottom;
+  -webkit-perspective: 200px;
+  perspective-origin: bottom bottom;
+  -webkit-perspective-origin: bottom bottom;
   border-bottom: 1px solid #717171;
   text-shadow: 0 1px 2px #000;
+  transform-style: preserve-3d;
 }
 
 .time::after {
@@ -196,11 +198,12 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  perspective: 200px;
-  -webkit-perspective:200px;
-  perspective-origin:bottom bottom;
-  -webkit-perspective-origin:bottom bottom;
+  perspective-origin: bottom bottom;
+  -webkit-perspective-origin: bottom bottom;
   text-shadow: 0 1px 2px #000;
+  /* transform-style: preserve-3d;
+  perspective: 200px;
+  -webkit-perspective: 200px; */
 }
 
 .count-box .front::after,
@@ -211,7 +214,11 @@ body {
 .count-box .back::after {
   z-index: 2;
   transform-origin: center top;
-  transform: rotateX(0.5turn);
+  /* transform perspective顺序问题，perspective需要在前面 */
+  transform: perspective(150px) rotateX(0.5turn);
+  transform-style: preserve-3d;
+  /* perspective: 200px; */
+  /* -webkit-perspective: 200px; */
 }
 
 .count-box .front::before {
@@ -222,7 +229,9 @@ body {
   transform-origin: center bottom;
   animation: frontFlipDown 0.8s ease-in-out;
   backface-visibility: hidden;
-
+  /* transform-style: preserve-3d;
+  perspective: 200px;
+  -webkit-perspective: 200px; */
 }
 
 .count-box.running .back::after {

@@ -1,4 +1,4 @@
-var Flipper =/**@Class*/ (function () {
+    var Flipper =/**@Class*/ (function () {
   function Flipper(node, currentTime, nextTime) {
     //this指向实例化的对象
     this.isFlipping = false;
